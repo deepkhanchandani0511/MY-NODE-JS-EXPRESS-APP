@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+
+  <!-- Include navigation -->
+  <%- include('partials/nav.ejs') %>
+
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="container center-align">
+      <h2 class="white-text">Welcome to Crypto Miner</h2>
+      <p class="white-text flow-text">Track and manage your favorite cryptocurrencies with ease.</p>
+      <a href="/add-item" class="btn-large waves-effect waves-light teal darken-2">Add New Item</a>
+    </div>
+  </header>
+
+  <!-- Items List Section -->
+  <div class="container">
+    <h4 class="center-align">Items List</h4>
+
+    <div class="row">
+      <% if (items.length > 0) { %>
+        <% items.forEach(function(item) { %>
+          <div class="col s12 m6 l4">
+            <div class="card hoverable">
+              <div class="card-content">
+                <span class="card-title"><%= item.name %></span>
+                <p><strong>Price:</strong> $<%= item.price %></p>
+              </div>
+              <div class="card-action center-align">
+                <a href="#!" class="btn-small teal lighten-1"><i class="material-icons">edit</i></a>
+                <a href="#!" class="btn-small red lighten-1"><i class="material-icons">delete</i></a>
+                <a href="#!" class="btn-small blue lighten-1"><i class="material-icons">send</i></a>
+              </div>
+            </div>
+          </div>
+        <% }); %>
+      <% } else { %>
+        <p class="center-align">There are no items available.</p>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Custom Styles -->
+  <style>
+    /* Hero Section Styling */
+    .hero-section {
+      background: linear-gradient(to right, #ff6f61, #de4d86);
+      padding: 60px 0;
+      text-align: center;
+      border-radius: 0 0 20px 20px;
+    }
+
+    /* Custom Styling for Cards */
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-action a {
+      margin: 0 5px;
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head.ejs') %>
+<body>
+  <nav>
+    <div class="nav-wrapper-container">
+      <a href="/" class="brand-logo">CRYPTO MINER</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/add-item">ADD-ITEM</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    
+
+    <form action="/add-item" method="POST">
+      <div class="row">
+        <!-- Align the label and input fields -->
+        <div class="input-field col s6">
+          <a href="#!" class="secondary-content"><i class="material-icons">shopping_cart</i></a>
+          <input id="item_name" type="text" name="name" required>
+          <label for="item_name">Item Name</label>
+        </div>
+        <div class="input-field col s6">
+          <a href="#!" class="secondary-content"><i class="material-icons">request_quote</i></a>
+          <input id="item_price" type="text" name="price" required>
+          <label for="item_price">Price</label>
+        </div>
+      </div>
+      
+      <button class="btn waves-effect waves-light" type="submit">ADD-ITEM</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<nav class="nav-wrapper gradient-bg">
+  <div class="container">
+    <a href="/" class="brand-logo left">Crypto Miner</a>
+    <ul id="nav-mobile" class="right">
+      <li><a href="#" id="theme-toggle" class="btn-small grey darken-3 white-text">🌙</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  /* Gradient Navbar */
+  .gradient-bg {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff6b81);
+    animation: gradientAnimation 6s infinite alternate;
+  }
+  
+  /* Animated Gradient */
+  @keyframes gradientAnimation {
+    0% { background: linear-gradient(135deg, #ff7eb3, #ff758c, #ff6b81); }
+    100% { background: linear-gradient(135deg, #ff6b81, #ff758c, #ff7eb3); }
+  }
+
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+  }
+  
+  /* Button Styling */
+  #theme-toggle {
+    transition: all 0.3s ease;
+  }
+  
+  #theme-toggle:hover {
+    background-color: #333;
+  }
+</style>
+
+<script>
+  // Theme Toggle Functionality
+  document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    this.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  });
+</script>
